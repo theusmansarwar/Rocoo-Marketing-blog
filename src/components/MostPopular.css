@@ -1,0 +1,61 @@
+.Most-content {
+  padding: 10px;
+  padding-left: 0%;
+}
+
+.Most-content .Content {
+  display: flex;
+  align-items: left;
+  height: 140px;
+
+  width: 350px;
+
+}
+
+.circle-image {
+  background-color: rgb(200, 196, 203);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.circle-img-heading {
+
+  width: 220px;
+  display: flex;
+  align-items: left;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.Most-content .Content h3 {
+  font-size: 16px;
+}
+
+.Most-content .Content h3:hover {
+  color: #e43b3b;
+}
+
+@media screen and (max-width: 768px) {
+  .Most-content {
+    padding: 0px;
+    width: 92%;
+    overflow: hidden;
+  }
+
+  .circle-image {
+    width: 90px;
+    height: 90px;
+
+  }
+
+  .circle-img-heading {
+    width: auto;
+    text-align: left;
+  }
+}

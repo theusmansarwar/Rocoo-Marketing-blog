@@ -1,0 +1,180 @@
+footer {
+  background-color: #000000;
+}
+
+.footer-list {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+
+}
+
+.footer-list .Footer_one {
+
+  width: 33%;
+  height: 40vh;
+  padding-left: 30px;
+  color: white;
+}
+
+.footer-list .Footer_one a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.footer-list .Footer_two {
+
+  width: 33%;
+  height: 40vh;
+  color: white;
+}
+
+.footer-list .Footer_two a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.footer-list .Footer_three {
+  color: white;
+  width: 33%;
+  height: 40vh;
+}
+
+.footer-list .Footer_three a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.footer-list .Footer_three ul {
+  text-decoration: none;
+  color: white;
+  list-style-type: none;
+
+}
+
+.last-list {
+  display: flex;
+  padding: 20px;
+
+}
+
+.last-list ul {
+  display: flex;
+  margin: 10px;
+  list-style: none;
+}
+
+.last-list ul li {
+  display: flex;
+  margin: 10px;
+  padding-right: 10px;
+  border-right: 2px solid #717171;
+
+}
+
+.last-list ul li:nth-last-child(-n+3) {
+  border-right: none;
+}
+
+.social-icon {
+  font-size: 20px;
+  color: white;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.last-section {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.last-img-section {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+
+}
+
+.left-last-img {
+  width: 40%;
+  padding-left: 30px;
+}
+
+.right-last-img {
+  width: 40%;
+
+}
+
+.last-img {
+  width: 100%;
+  border-right: 2px solid #717171;
+
+}
+
+.last-img2 {
+  width: 100%;
+  margin-top: 40px;
+
+
+}
+
+.last-text-section {
+  width: 60%;
+  padding: 50px;
+}
+
+.last-row {
+  display: flex;
+}
+
+.last-row-item {
+  border-left: 4px solid #040404;
+  margin: 20px;
+  padding: 30px;
+}
+
+.credit {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .footer-list {
+
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    gap: 10px;
+
+
+  }
+
+  .footer-list .Footer_one {
+    display: none;
+  }
+
+  .footer-list .Footer_two {
+    display: none;
+  }
+
+  .footer-list .Footer_three {
+    padding: 30px;
+    height: fit-content;
+  }
+
+  .credit {
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}

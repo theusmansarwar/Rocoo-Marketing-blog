@@ -1,0 +1,77 @@
+.login-form {
+    background-image: linear-gradient(to top right, rgb(0, 52, 78), rgb(0, 126, 98));
+    height: 80vh;
+    width: 40%;
+    opacity: 0.9;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    color: white;
+}
+
+.login-form form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+}
+
+.login-form form .input-div {
+    width: 80%;
+    height: 10vh;
+    border-bottom: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+
+}
+
+.login-form form .input-div input {
+    width: 100%;
+    border-style: none;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+
+
+
+}
+
+.login-form form .input-div label {
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    bottom: 30px;
+
+
+}
+
+.login-button {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border-style: none;
+    width: 80%;
+}
+
+.login-button:hover {
+    background-color: rgb(255, 60, 0);
+    color: white;
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border-style: none;
+    width: 80%;
+}
+
+.forget,
+.privacy {
+    font-size: 12px;
+
+}

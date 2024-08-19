@@ -1,0 +1,65 @@
+.TechnologyCards-area {
+  padding: 20px;
+  display: flex;
+  width: 90%;
+  gap: 10px;
+}
+
+.TechnologyCards-area .TechnologyCard {
+  background-color: rgb(200, 196, 203);
+  display: flex;
+  height: 250px;
+  width: 33.33%;
+  margin: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.TechnologyCards-area .TechnologyCard:hover {
+  transform: scale(1.04);
+  border: 2px solid #e43b3b;
+}
+
+.TechnologyCards-area .black-screen {
+  background-color: rgba(65, 65, 65, 0.087);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.TechnologyCards-area .black-screen h3,
+.TechnologyCards-area .black-screen p {
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .TechnologyCards-area {
+    padding: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .TechnologyCards-area .TechnologyCard {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+  }
+}

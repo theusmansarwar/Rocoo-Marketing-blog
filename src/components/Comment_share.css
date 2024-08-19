@@ -1,0 +1,129 @@
+.Comment_share .upper-section {
+   display: flex;
+   height: 50px;
+   justify-content: center;
+   align-items: center;
+   line-height: 0%;
+
+}
+
+.Comment_share .upper-section .left-section {
+   width: 90%;
+   color: rgb(143, 143, 143);
+   display: flex;
+
+}
+
+.Comment_share .upper-section .right-section {
+   width: 10%;
+   color: rgb(143, 143, 143);
+   display: flex;
+
+}
+
+
+.Comment_share .upper-section .left-section .person-icon {
+   font-size: 20px;
+   padding: 0%;
+   margin: 0%;
+
+}
+
+.Comment_share .upper-section .right-section .person-icon {
+   font-size: 20px;
+   padding: 0%;
+   margin: 0%;
+
+}
+
+.Comment_share .upper-section .right-section p {
+   font-size: 16px;
+   padding: 0%;
+   margin: 0%;
+   padding-top: 10px;
+   padding-left: 5px;
+
+}
+
+.Comment_share .upper-section .left-section p {
+   font-size: 16px;
+   padding: 0%;
+   margin: 0%;
+   padding-top: 10px;
+   padding-left: 5px;
+
+}
+
+.lower-section {
+   display: flex;
+
+}
+
+.Social-media-icon1 {
+   display: flex;
+   border: solid 1px #883b3b;
+   padding: 10px;
+   font-weight: 600;
+   font-size: 14px;
+   gap: 5px;
+   color: rgb(48, 48, 255);
+}
+
+.Social-media-icon2 {
+   display: flex;
+   border: solid 1px #883b3b;
+   padding: 10px;
+   font-weight: 600;
+   font-size: 14px;
+   gap: 5px;
+   color: rgb(48, 145, 255);
+}
+
+.Social-media-icon3 {
+   display: flex;
+   border: solid 1px #883b3b;
+   padding: 10px;
+   font-weight: 600;
+   font-size: 14px;
+   gap: 5px;
+   color: rgb(206, 0, 0);
+}
+
+.Social-media-icon4 {
+   display: flex;
+   border: solid 1px #883b3b;
+   padding: 10px;
+   font-weight: 600;
+   font-size: 14px;
+   gap: 5px;
+   color: rgb(10, 196, 7);
+}
+
+@media screen and (max-width: 768px) {
+   .Comment_share .upper-section {
+
+      height: 40px;
+
+
+   }
+
+   .Comment_share .upper-section .right-section p {
+      font-size: 12px;
+
+
+   }
+
+   .Comment_share .upper-section .left-section p {
+      font-size: 12px;
+
+
+   }
+
+   .lower-section {
+      display: none;
+      height: 30px;
+
+   }
+
+
+}
