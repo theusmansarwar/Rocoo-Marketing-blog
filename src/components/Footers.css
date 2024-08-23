@@ -1,5 +1,8 @@
-footer {
+.footer {
   background-color: #000000;
+  padding: 5%;
+  padding-bottom: 2%;
+
 }
 
 .footer-list {
@@ -7,57 +10,159 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 10%;
 
 
 }
 
 .footer-list .Footer_one {
 
-  width: 33%;
-  height: 40vh;
-  padding-left: 30px;
+  width: 15%;
+  height: 30vh;
+  margin: 0%;
+  padding: 0%;
+
   color: white;
+ 
+}
+.footer-list .Footer_one h4 {
+  color: white;
+  line-height: 0%;
+  margin: 0%;
+  padding: 0%;
 }
 
-.footer-list .Footer_one a {
+
+.footer-list .Footer_one ul{
   text-decoration: none;
   color: white;
+ list-style: none;
+ width: 100%;
+ margin: 0%;
+  padding: 0%;
+  margin-top: 20px;
+  
+
+ 
+
+}
+.footer-list .Footer_one ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 0%;
+  margin: 0%;
+  line-height: 0%;
 
 }
 
 .footer-list .Footer_two {
 
-  width: 33%;
-  height: 40vh;
+  width: 15%;
+  height: 30vh;
+  margin: 0%;
+  padding: 0%;
+
   color: white;
 }
+.footer-list .Footer_two h4 {
+  color: white;
+  line-height: 0%;
+  margin: 0%;
+  padding: 0%;
+}
 
-.footer-list .Footer_two a {
+
+.footer-list .Footer_two ul{
   text-decoration: none;
   color: white;
+ list-style: none;
+ width: 100%;
+ margin: 0%;
+  padding: 0%;
+  margin-top: 20px;
+
+ 
+
+}
+
+.footer-list .Footer_two ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 0%;
+  margin: 0%;
+  line-height: 0%;
 
 }
 
 .footer-list .Footer_three {
+  width: 15%;
+  height: 30vh;
+  margin: 0%;
+  padding: 0%;
+
   color: white;
-  width: 33%;
-  height: 40vh;
+}
+.footer-list .Footer_three h4 {
+  color: white;
+  line-height: 0%;
+  margin: 0%;
+  padding: 0%;
 }
 
-.footer-list .Footer_three a {
+
+.footer-list .Footer_three ul{
   text-decoration: none;
   color: white;
+ list-style: none;
+ width: 100%;
+ margin: 0%;
+  padding: 0%;
+  margin-top: 20px;
+
+ 
 
 }
 
-.footer-list .Footer_three ul {
+.footer-list .Footer_three ul li a{
   text-decoration: none;
   color: white;
-  list-style-type: none;
+  font-size: 14px;
+  padding: 0%;
+  margin: 0%;
+  line-height: 0%;
 
 }
 
+
+.Footer_four{
+  width: 20%;
+  height: auto;
+  padding: 20px;
+  background-color: #494949a1;
+  color: white;
+  margin-bottom: 20px;
+}
+.email-btn-icon{
+  background-color: rgba(1, 91, 225, 0.92);
+  color: white;
+ font-size: 16px;
+  padding: 10px;
+}
+.input-container{
+  height: 36px;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  width: 100%;
+}
+.Footer_four p{
+  font-size: 10px;
+}
+.Footer_four h4{
+  line-height: 0%;
+}
 .last-list {
   display: flex;
   padding: 20px;
@@ -87,6 +192,9 @@ footer {
   color: white;
   gap: 10px;
   margin-top: 10px;
+  width: 33%;
+  display: flex;
+  justify-content: right;
 }
 
 .last-section {
@@ -137,38 +245,78 @@ footer {
   border-left: 4px solid #040404;
   margin: 20px;
   padding: 30px;
+  margin-bottom: 10px;
 }
 
 .credit {
-  color: white;
+  color: rgba(255, 255, 255, 0.482);
   display: flex;
   justify-content: center;
-  padding: 10px;
+  font-size: 10px;
+
 }
 
-@media screen and (max-width: 768px) {
+.footer-last-div{
+  color: white;
+  display: flex;
+  width: 100%;
+ 
+}
+.footer-last-div ul{
+  color: white;
+  list-style: none;
+  width: 33%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+}
+.footer-last-div ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+
+}
+.footer-Logo-text{
+  
+  font-family: 'ITC Eras Std', sans-serif;
+  color: rgb(249, 249, 249); 
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 0%;
+ width: 33%;
+}
+.footer-icons{
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 1080px) {
 
   .footer-list {
-
-    display: flex;
+flex-direction: column-reverse;
     align-items: left;
     justify-content: left;
     text-align: left;
-    gap: 10px;
+    gap: 50px;
+    height: auto;
+margin-bottom: 30px;
 
 
   }
 
   .footer-list .Footer_one {
-    display: none;
+    width: 80%;
+    height: fit-content;
   }
 
   .footer-list .Footer_two {
-    display: none;
+    width: 80%;
+    height: fit-content;
   }
 
   .footer-list .Footer_three {
-    padding: 30px;
+    width: 80%;
     height: fit-content;
   }
 
@@ -176,5 +324,33 @@ footer {
     font-size: 12px;
     text-align: center;
     padding-bottom: 20px;
+  }
+  .footer-last-div{
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-Logo-text{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .footer-last-div ul{
+   margin-top: 30px;
+    width: 100%;
+  }
+  .social-icon{
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .Footer_four{
+    width: 80%;
+  }
+  .Footer_four h4{
+    margin-bottom:20px ;
+  }
+  .Footer_four p{
+    margin-top:10px ;
   }
 }

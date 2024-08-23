@@ -1,53 +1,78 @@
 import React from 'react'
-import { IoEarthSharp } from "react-icons/io5";
+import { FaArrowRight } from "react-icons/fa6";
 import { TiSocialFacebook, TiSocialTwitter, TiSocialLinkedin, TiSocialInstagram, } from "react-icons/ti";
 import { RiWhatsappLine } from "react-icons/ri";
+
 import './Footers.css'
 const Footers = () => {
   return (
-    <div>
-      <footer>
+   
+      <div className='footer'>
 
         <div className='footer-list'>
           <div className='Footer_one'>
-            <h3>Company</h3>
-            <a href=''><p></p>About</a>
-            <a href=''><p></p>Contact</a>
-            <a href=''><p></p>Career</a>
-            <a href=''><p></p>Team</a>
-            <a href=''><p></p>privacy</a>
-            <a href=''><p></p>Sitemaps</a>
-
+            <h4>Product</h4>
+            <ul>
+            <li><a href=''>Employee database</a></li>
+            <li> <a href=''>Payroll</a></li>
+            <li><a href=''>Absences</a></li>
+            <li><a href=''>Time tracking</a></li>
+            <li><a href=''>Shift planner</a></li>
+            <li><a href=''>Recuriting</a></li>
+            </ul>
           </div>
           <div className='Footer_two'>
-            <h3>Design services</h3>
-            <a href=''><p></p>Design contests</a>
-            <a href=''><p></p>1-to-1 Projects</a>
-            <a href=''><p></p>Find a designer</a>
-            <a href=''><p></p>Discover inspiration</a>
-            <a href=''><p></p>Pricing</a>
-
+          <h4>Information</h4>
+            <ul>
+            <li><a href=''>FAQ</a></li>
+            <li> <a href=''>Blog</a></li>
+            <li><a href=''>Support</a></li>
+           
+            </ul>
 
           </div>
           <div className='Footer_three'>
-            <h3>Contact</h3>
-            <a href=''><p></p>theusmansarwar26@gmail.com</a>
-            <a href=''><p></p>+923278000326</a>
-            <a href=''><p></p>Johar Town Lahore, Punjab, Pakistan 57000</a>
-            <div className='social-icon'>
-              <TiSocialFacebook />
-              <TiSocialTwitter />
-              <TiSocialLinkedin />
-              <TiSocialInstagram />
-              <RiWhatsappLine />
-            </div>
+          <h4>Company</h4>
+            <ul>
+            <li><a href=''>About us</a></li>
+            <li> <a href=''>Careers</a></li>
+            <li><a href=''>Contact us</a></li>
+            <li><a href=''>Lift Media</a></li>
+            </ul>
+           
+
+          </div>
+          <div className='Footer_four'>
+            <h4>Subscribe</h4>
+            <div class="input-container">
+   
+    <input class="input-field" type="email" placeholder="Email Address" name="email"/>
+    <FaArrowRight class="email-btn-icon"/>
+  </div>
+            <p>Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.</p>
+          
+           
 
           </div>
         </div>
         <hr />
-        <div className='credit'>Copyright © 2024 - 2024 StartupPAkistan.com. All Rights Reserved.  Powered by ROCCO video</div>
-      </footer>
-    </div>
+        <div className='footer-last-div'>
+          <p className='footer-Logo-text'>ROCCO BLOGS</p>
+          <ul>
+            <li><a href=''>Terms</a></li>
+            <li><a href=''>Privacy</a></li>
+            <li><a href=''>Cookies</a></li>
+            </ul>
+           <div className='social-icon'>
+              <TiSocialFacebook className='footer-icons'/>
+              <TiSocialTwitter className='footer-icons'/>
+              <TiSocialLinkedin className='footer-icons'/>
+              <TiSocialInstagram className='footer-icons'/>
+              <RiWhatsappLine className='footer-icons'/>
+            </div></div>
+        <div className='credit'>Copyright © 2024 RoccoBlogs.com All Rights Reserved</div>
+      </div>
+  
   )
 }
 

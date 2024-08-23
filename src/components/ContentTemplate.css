@@ -1,0 +1,23 @@
+.ContentTemplate{
+    display: flex;
+    gap: 2%;
+}
+.ContentTemplate .left{
+   width: 49%;
+   height: 350px;;
+}
+.ContentTemplate .right{
+    width: 49%;
+ }
+ @media screen and (max-width: 1080px) {
+    .ContentTemplate{
+      flex-direction: column;
+    }
+    .ContentTemplate .left{
+       width: 100%;
+       margin-bottom: 10px;
+    }
+    .ContentTemplate .right{
+        width: 100%;
+     }
+ }

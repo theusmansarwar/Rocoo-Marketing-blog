@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
-import './Featuredposts.css';
+import './Fullpost.css';
 
-const Featured_cardData = ({ onDataChange }) => {
+const Fullpost = ({onDataChange, category} ) => {
 
   const handleClick = (data) => {
     onDataChange(data);
@@ -81,104 +81,34 @@ const Featured_cardData = ({ onDataChange }) => {
     { id: 72, category: 'Trending', title: 'The Impact of 5G on Smart Cities', text: 'How 5G technology is enhancing smart city developments.', image: 'https://images.pexels.com/photos/6394159/pexels-photo-6394159.jpeg', created_at: '2025-04-17T12:25:34Z', by: 'usman' }
 
   ]
-  const trending = cardData.filter(card => card.category === 'Trending');
+  const trending = cardData.filter(card => card.category === category);
 
   function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', options);
   }
-
   return (
-    <>
-      <div className='trending'>
-        <div class="blob"></div>
-        <p className='heading'>Trending &gt;</p>
-        <div className='mid'>
-          <p className='heading2'>
-            {trending.map(card => (
-              <span key={card.id}>{card.title}</span>
-            ))}
-          </p>
-        </div>
-        <div className='right'>
-          <p className='less-than'> &lt;</p>
-          <p className='greater-than'> &gt;</p>
-        </div>
-      </div>
-
-      <div className='featured'>
-
-        <div className='row'>
-
-          <div className='right'>
-            <div className='upper-post'
-              style={{ backgroundImage: `url(${cardData[1].image})` }}
-              onClick={() => handleClick(cardData[1])}
-            >
-              <div className='black-screen'>
-                <p>{cardData[1].category}</p>
-                <h3>{cardData[1].title}</h3>
-                <p className='upload-info'>by {cardData[1].by}  {formatDate(cardData[1].created_at)} </p>
-              </div>
-            </div>
-
-
-
-
-            <div className='lower-post'>
-              <div
-                className='first'
-                onClick={() => handleClick(cardData[2])}
-                style={{ backgroundImage: `url(${cardData[2].image})` }}
-              >
-                <div className='black-screen'>
-                  <p>{cardData[2].category}</p>
-                  <h3>{cardData[2].title}</h3>
-                  <p className='upload-info'>by {cardData[2].by} {formatDate(cardData[2].created_at)}  </p>
-                </div>
-              </div>
-              <div
-                className='second'
-                onClick={() => handleClick(cardData[3])}
-                style={{ backgroundImage: `url(${cardData[3].image})` }}
-              >
-                <div className='black-screen'>
-                  <p>{cardData[3].category}</p>
-                  <h3>{cardData[3].title}</h3>
-                  <p className='upload-info'>by {cardData[3].by} {formatDate(cardData[3].created_at)} </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-          <div className='left'>
-            <div className='post'
-              style={{
-                backgroundImage: `url(${cardData[0].image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-              onClick={() => handleClick(cardData[0])}
-            >
-              <div className='black-screen'>
-                <p>{cardData[0].category}</p>
-                <h3>{cardData[0].title}</h3>
-                <p className='upload-info'>by {cardData[0].by} {formatDate(cardData[0].created_at)}  </p>
-              </div>
-            </div>
-
+    <div className='full-post-div'>
+      
+        <div className='post'
+          style={{
+            backgroundImage: `url(${cardData[0].image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+          onClick={() => handleClick(cardData[0])}
+        >
+          <div className='black-screen'>
+            <p>{cardData[0].category}</p>
+            <h3>{cardData[0].title}</h3>
+            <p className='upload-info'>by {cardData[0].by} {formatDate(cardData[0].created_at)}  </p>
           </div>
         </div>
       </div>
+  
 
-    </>
-  );
-};
+  )
+}
 
-export default Featured_cardData;
+export default Fullpost

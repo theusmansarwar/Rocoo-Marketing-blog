@@ -1,95 +1,54 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { TiSocialTwitter } from "react-icons/ti";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiInstagramFill, RiVimeoFill, RiYoutubeFill, RiFacebookFill, RiSearchLine } from "react-icons/ri";
-import Blacklogo from '../res-img/desktop-black.png';
-import whitelogo from '../res-img/desktop-white.png'
 import Featured_Posts from './Featured_Posts';
-import TechnologyCards from './TechnologyCards';
 import MostPopular from './MostPopular';
-import Globaltech from './Globaltech';
 import LowerpostTemplate from './LowerpostTemplate';
 import Login from './Login';
 import ArticleView from './ArticleView';
 import { GiHamburgerMenu } from "react-icons/gi";
-import GridPost from './GridPost';
+import ContentTemplate from './ContentTemplate';
 import Footers from './Footers';
 import Category from './Category';
-const imageWidth = '25%';
-const imageHeight = '120px';
-const Home = () => {
-
+import Header from './Header';
+import UpperPostTemplate from './UpperPost_template';
+import SideMenu from './SideMenu';
+const Home = ({menuClick}) => {
+  const formatTitleForURL = (title) => {
+    return title.toLowerCase().replace(/\s+/g, '-');
+  };
   const ListCategory = ['Tech', 'Entertainment', 'Business', 'Sports', 'Politics', 'Latest', 'Showbiz', 'Global', 'More']
 
-
-  const today = new Date();
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = today.toLocaleDateString('en-US', options);
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
-  const [isArticlesVisible, setIsArticlesVisible] = useState(false);
-  const [isCategoryVisible, setIsCategoryVisible] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const locationData = location.state?.data;
+  const [selectedCategory, setSelectedCategory] = useState(locationData || "");
   const [isLoginVisible, setIsLoginVisible] = useState(false);
-  const [isIndexVisible, setIsIndexVisible] = useState(true);
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(locationData || "");
   const [data, setData] = useState('');
   const handleDataChange = (newData) => {
     setData(newData);
-    handleArticleClick();
-    
-  };
 
-  const handleDataFromGrandchild = (receivedData) => {
-    setData(receivedData);
-    handleArticleClick();
-    console.log("Data received from grandchild:", receivedData);
+    navigate(`/article/${formatTitleForURL(newData.title)}`, { state: { data: newData } });
+
   };
   const onDataFromGrandchild = (receivedData) => {
     setData(receivedData);
-    handleArticleClick();
+    navigate(`/article/${formatTitleForURL(receivedData.title)}`, { state: { data: receivedData } });
 
   };
-  const fromgrand = (receivedData) => {
-    setData(receivedData);
-    handleArticleClick();
 
-  };
-  const handleSearchClick = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
-  const handleLoginClick = () => {
-    setIsLoginVisible(!isLoginVisible);
-  };
+ 
+ 
   const handleCloseClick = () => {
     setIsLoginVisible(!isLoginVisible);
   };
-  const handleArticleClick = () => {
-    setIsArticlesVisible(!isArticlesVisible);
-    setIsIndexVisible(!isIndexVisible);
-  };
-  const handleCategoryClick = (category) => {
-    return () => {
-      setIsArticlesVisible(false);
-      setIsIndexVisible(false);
-      setIsCategoryVisible(true);
-      setSelectedCategory(category);
-      setActiveCategory(category);
-    };
-  };
-  const handleMenuClick = () => {
-    setIsMenuClicked(!isMenuClicked);
-  };
-  const backtohome = () => {
-    return () => {
-      setIsArticlesVisible(false);
-      setIsIndexVisible(true);
-      setIsCategoryVisible(false);
-      setSelectedCategory('');
-      setActiveCategory(null);
-    };
-  };
 
+  const handleSignIn = () => {
+    setIsLoginVisible(!isLoginVisible);
+  };
 
 
   return (
@@ -100,127 +59,108 @@ const Home = () => {
           <Login />
         </div>
       )}
-
-      <header className="App-header">
-        <nav>
-          <div className='top-nav'>
-            <div className='left-div'>
-              <p className='date-text'>{formattedDate}</p>
-              <p className='sign-in-text' onClick={handleLoginClick} >Sign in / Join</p>
-            </div>
-            <div className='right-div'>
-              <ul>
-                <li><a href='#'><RiFacebookFill /></a></li>
-                <li><a href='#'><RiInstagramFill /></a></li>
-                <li><a href='#'><TiSocialTwitter /></a></li>
-                <li><a href='#'><RiVimeoFill /></a></li>
-                <li><a href='#'><RiYoutubeFill /></a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div className='logo-section'>
-          <img src={Blacklogo} alt="Logo" />
-        </div>
-        <div className='menu-section' id='menu-section' >
-          <GiHamburgerMenu className='menu-icon' onClick={handleMenuClick} />
-          <div className='menu-logo'>
-            <img src={whitelogo} alt="Logo" />
-          </div>
-          <ul>
-            {ListCategory.map((category) => (
-              <li
-                key={category}
-                onClick={handleCategoryClick(category)}
-                className={activeCategory === category ? 'active' : ''}
-              >
-                {category}
-              </li>
-            ))}
-          </ul>
-          <RiSearchLine className='search-icon' onClick={handleSearchClick} />
-        </div>
-        {isSearchVisible && (
-          <div className='search-div'>
-            <div className="arrow arrow-right"></div>
-            <div className='search-section'>
-              <input type='search' autoFocus />
-              <button>Search</button>
-            </div>
-          </div>
-        )}
-      </header>
+       <Header handleSignIn={handleSignIn} menuClick={menuClick}/>
       <main>
-        {isMenuClicked && (
-          <div className='SideMenu'>
-            <ul>
-              {ListCategory.map((category) => (
-                <li
-                  key={category}
-                  onClick={handleCategoryClick(category)}
-                  className={activeCategory === category ? 'active' : ''}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
+  
+       
+          <div className='contents-div' >
 
-          </div>
-        )}
-        {isArticlesVisible && (
-          <ArticleView data={data} onAction={backtohome()} onDataChange={fromgrand} />
-        )}
-        {isCategoryVisible && (
-          <Category category={selectedCategory} onAction={backtohome()} onDataFromGrandchild={handleDataChange} />
-        )}
-
-        {isIndexVisible && (
-          <>
             <Featured_Posts onDataChange={handleDataChange} />
+            <div className='line-headings'>
+              <div className='top'>
+                <h3>MOST POPULAR</h3>
+                <p>View All</p>
+              </div>
+              <div className="stripe">
+                <span className="stripe-1"></span> <span className="stripe-2"></span>
+              </div>
+            </div>
+            <MostPopular onDataChange={handleDataChange} repetitions={3} />
+
+
             <div className='Content-area'>
 
               <div className='left-side-content'>
-
-                <div className='Heading-1'>
-                  <h2 onClick={handleArticleClick}><span>TECHNOLOGY</span></h2>
+                <div className='line-headings'>
+                  <div className='top'>
+                    <h3>TECHNOLOGY</h3>
+                    <p>View All</p>
+                  </div>
+                  <div className="stripe">
+                    <span className="stripe-3"></span> <span className="stripe-2"></span>
+                  </div>
                 </div>
-                <TechnologyCards onDataChange={onDataFromGrandchild} category={'Tech'} />
-                <Globaltech onDataFromGrandchild={handleDataFromGrandchild} />
-                <div className='Heading-3'>
-                  <h2><span>BUSINESS</span></h2>
-                </div>
 
-                <LowerpostTemplate repetitions={4} category="Business" onDataChange={onDataFromGrandchild}
-                  imageWidth={imageWidth}
-                  imageHeight={imageHeight}
-                  offset={0} />
-
-                <div className='Heading-3'>
-                  <h2><span>LATEST ARTICLES</span></h2>
-                </div>
-                {/* < Latest_articles  onDataChange={handleDataChange}/> */}
-
-                <div className='latest-articles-div'>
-                  <GridPost category="Latest" offset={0} repetitions={6} onDataChange={handleDataChange} />
-                </div>
+                <ContentTemplate lowerRepititions={4} paddingTop="0px" lowerHeight="85px" upperHeight='370px' />
 
               </div>
               <div className='right-side-content'>
-                <div className='Heading-2'>
-                  <h2><span>MOST POPULAR</span></h2>
+                <div className='line-headings'>
+                  <div className='top'>
+                    <h3>GLOBAL TECH</h3>
+                    <p>View All</p>
+                  </div>
+                  <div className="stripe">
+                    <span className="stripe-4"></span> <span className="stripe-2"></span>
+                  </div>
                 </div>
-                <MostPopular onDataChange={handleDataChange} />
-
-                <div className='Heading-1'>
-                  <h2><span>Sports</span></h2>
-                </div>
-                <GridPost category="Sports" repetitions={4} offset={0} onDataChange={handleDataChange}  />
-
+                <LowerpostTemplate repetitions={4} category="Tech" onDataChange={onDataFromGrandchild}
+                  offset={0}
+                  imageHeight={"85px"} />
 
               </div>
             </div>
-          </>
-        )}
+
+            <div className='line-headings'>
+              <div className='top'>
+                <h3>LATEST ARTICLE</h3>
+                <p>View All</p>
+              </div>
+              <div className="stripe">
+                <span className="stripe-5"></span> <span className="stripe-2"></span>
+              </div>
+            </div>
+            <UpperPostTemplate repetitions={6} category={''} offset={0} onDataChange={onDataFromGrandchild} />
+
+
+
+
+            <div className='Content-area2'>
+
+              <div className='left-side-content2'>
+                <div className='line-headings'>
+                  <div className='top'>
+                    <h3>BUSSINES</h3>
+                    <p>View All</p>
+                  </div>
+                  <div className="stripe">
+                    <span className="stripe-3"></span> <span className="stripe-2"></span>
+                  </div>
+                </div>
+
+                <ContentTemplate display="column" width="100%" paddingTop="20px" lowerRepititions={4} />
+
+              </div>
+              <div className='right-side-content2'>
+                <div className='line-headings'>
+                  <div className='top'>
+                    <h3>Sports</h3>
+                    <p>View All</p>
+                  </div>
+                  <div className="stripe">
+                    <span className="stripe-1"></span> <span className="stripe-2"></span>
+                  </div>
+                </div>
+                <LowerpostTemplate repetitions={4} category="Tech" onDataChange={onDataFromGrandchild}
+                  offset={0}
+                  imageHeight={"173px"}
+                  description={true} />
+
+              </div>
+            </div>
+
+          </div>
+      
       </main>
       <Footers />
     </div>

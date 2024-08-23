@@ -1,67 +1,105 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './ArticleView.css';
+import './DummyAd.css';
+
+import { IoCloseOutline } from "react-icons/io5";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Footers from '../components/Footers';
-import Comment_share from './Comment_share';
-import Latest_articles from '../components/MostPopular';
-import TechnologyCards from '../components/TechnologyCards';
+import Header from './Header';
 
-const ArticleView = ({ data: initialData, onAction }) => {
-  const [articleData, setArticleData] = useState(initialData);
-
-  const handleDataChange = (newData) => {
-    setArticleData({
-      title: newData.title,
-      category: newData.category,
-      text: newData.text,
-      image: newData.image
-    });
+import Login from './Login';
+const ArticleView = ({ data: initialData, menuClick }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const locationData = location.state?.data;
+  const [articleData, setArticleData] = useState(locationData || initialData);
+  const [isLoginVisible, setIsLoginVisible] = useState(false);
+  useEffect(() => {
+    if (locationData) {
+      setArticleData(locationData);
+    }
+  }, [locationData]);
+  const handleCloseClick = () => {
+    setIsLoginVisible(!isLoginVisible);
+  };
+  const handleSignIn = () => {
+    setIsLoginVisible(!isLoginVisible);
   };
 
-  return (
-    <div className='main-div-article'>
-      <div className='Article-content-area'>
-        <div className='left'>
-          <div aria-label="breadcrumb" className='breadcrumb'>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item" onClick={onAction}>Home</li>
-              <li className="breadcrumb-item active">{articleData.category}</li>
-            </ol>
-          </div>
+  function formatDate(dateString) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', options);
+  }
 
-          <h1>{articleData.title}</h1>
-          <Comment_share />
-          <img src={articleData.image} alt="Article Illustration" />
-          <p>{articleData.text}</p>
-          <div className='extraheading'>
-            <div className='Heading-1'>
-              <h2><span>TECHNOLOGY</span></h2>
-            </div>
-            <TechnologyCards />
-          </div>
-          <div className='comment-section'>
-            <form>
-              <textarea required placeholder='Comment:*......' /><br />
-              <input type='text' required placeholder='Name:*' /><br />
-              <input type='email' required placeholder='Email:*' /><br />
-              <input type='url' placeholder='Website:' /><br />
-              <div className='checkbox-class'>
-                <input type="checkbox" />
-                <p className='agree-text'> Save my name, email, and website in this browser for the next time I comment.</p>
-              </div>
-              <button type="submit">POST COMMENT</button>
-            </form>
-          </div>
-        </div>
 
-        <div className='right'>
-          <div className='Heading-3'>
-            <h2><span>LATEST ARTICLES</span></h2>
-          </div>
-          <Latest_articles onDataChange={handleDataChange} />
-        </div>
+  useEffect(() => {
+    const loadAds = () => {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.error('AdSense error:', e.message);
+      }
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.onload = loadAds;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+
+  return (<>
+    {isLoginVisible && (
+      <div className='login-div'>
+        <IoCloseOutline className='close-btn' onClick={handleCloseClick} />
+        <Login />
       </div>
+    )}
+    <div className='ArticleView'>
+
+      <Header  handleSignIn={handleSignIn} menuClick={menuClick} />
+      <h1>{articleData.title}</h1>
+      <p className='upload-info'>by {articleData.by} | {formatDate(articleData.created_at)} </p>
+      <img src={articleData.image} />
+      <div className='article-content'>
+        <div className='left'>
+          <div className="dummy-ad-vertical">
+            <p>Ad Space</p>
+            <p>160 x 600</p>
+          </div>
+        </div>
+        <div className='mid'>
+          <p>{articleData.text}</p>
+          <div className="dummy-ad-large">
+            <p>Ad Space</p>
+            <p>336 x 280</p>
+          </div>
+        </div>
+        <div className='right'>
+          <div className="dummy-ad-vertical">
+            <p>Ad Space</p>
+            <p>160 x 600</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div className='FOOTER'>
+        <Footers />
+      </div>
+
     </div>
+
+    </>
   );
 };
 

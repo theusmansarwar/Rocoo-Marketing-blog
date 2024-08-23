@@ -1,0 +1,62 @@
+
+
+.full-post-div  {
+    background-color: rgb(232, 232, 232);
+    height: 100%;
+    width: 100%;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+}
+
+.full-post-div  .post {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.full-post-div  .post {
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.full-post-div  .post:hover {
+    cursor: pointer;
+
+}
+
+.full-post-div  .black-screen p {
+    z-index: 3;
+    margin: 0;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 20px;
+    text-align: left;
+    align-self: start;
+    position: relative;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.full-post-div  .black-screen h3 {
+    z-index: 3;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    text-align: left;
+    align-self: start;
+}
+
+
+.full-post-div  .black-screen .upload-info {
+    background-color: transparent;
+    color: rgb(193, 193, 193);
+    margin-top: -10px;
+    padding-bottom: 10px;
+
+
+}

@@ -1,21 +1,35 @@
 .Most-content {
   padding: 10px;
   padding-left: 0%;
+  display: flex;
+  width: 99%;
+  height: fit-content;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  
 }
-
-.Most-content .Content {
+.Most-content .Content{
+  border-right: 2px solid #C6C6C6;
+ padding-left: 3%;
+ padding-right: 3%;
   display: flex;
   align-items: left;
   height: 140px;
 
-  width: 350px;
+  width: 30%;
+
+}
+.Most-content .Content:last-child{
+  border-right: none;
 
 }
 
+
 .circle-image {
   background-color: rgb(200, 196, 203);
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 160px;
   border-radius: 50%;
   margin: 10px;
   background-size: cover;
@@ -23,14 +37,30 @@
   background-repeat: no-repeat;
 
 }
-
+.circle-img-heading .upload-info{
+  font-size: 12px;
+  line-height: 0%;
+}
 .circle-img-heading {
 
   width: 220px;
   display: flex;
+  flex-direction: column;
   align-items: left;
-  justify-content: flex-end;
+  justify-content: center;
   margin-left: auto;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+.category-text{
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Most-content .Content h3 {
@@ -41,21 +71,37 @@
   color: #e43b3b;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
   .Most-content {
-    padding: 0px;
-    width: 92%;
-    overflow: hidden;
+    padding: 10px;
+  padding-left: 0%;
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  height: fit-content;
+  justify-content: left;
+  padding-bottom: 10px;
+  
+  }
+  .Most-content .Content{
+    width: 95%;
+    border-right: none;
   }
 
-  .circle-image {
+  .Most-content .Content .circle-image{
     width: 90px;
-    height: 90px;
-
+    height: 80px
   }
-
   .circle-img-heading {
     width: auto;
     text-align: left;
+  }
+  .Most-content .Content .circle-img-heading h3 {
+    font-size: 14px;
+    margin-top: -40px;
+  }
+  .Most-content .Content .circle-img-heading p {
+    font-size: 10px;
+    margin-top: 10px;
   }
 }
