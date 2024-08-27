@@ -29,7 +29,7 @@
 .circle-image {
   background-color: rgb(200, 196, 203);
   height: 140px;
-  width: 160px;
+  width: 140px;
   border-radius: 50%;
   margin: 10px;
   background-size: cover;
@@ -87,10 +87,19 @@
     width: 95%;
     border-right: none;
   }
+  .Most-content .Content .left{
+    width: 37%;
+    border-right: none;
+  }
+  .Most-content .Content .left .circle-image {
+ padding: 0%;
+ width: 100px;
+ height: 100px;
+ margin: 0%;
 
-  .Most-content .Content .circle-image{
-    width: 90px;
-    height: 80px
+    object-fit: cover;
+ 
+  
   }
   .circle-img-heading {
     width: auto;

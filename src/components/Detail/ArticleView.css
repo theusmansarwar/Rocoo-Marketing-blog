@@ -24,7 +24,7 @@ margin-top: 30px;
 }
 .article-content{
   display: flex;
-  height: 100vh;
+  height: max-content;
   width: 90%;
   gap: 2%;
   margin-top: 20px;

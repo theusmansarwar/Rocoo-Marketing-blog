@@ -94,11 +94,12 @@ const MostPopular = ({onDataChange , repetitions}) => {
         <div className='Most-content'>
             {latestPosts.map(post => (
                 <div className='Content' key={post.id}>
-                    <div
+                    <div className='left'><div
                         className='circle-image'
                         style={{ backgroundImage: `url(${post.image})` }}
                         onClick={() => sendDataToParent(post)}
-                    ></div>
+                    ></div></div>
+                    
                     <div className='circle-img-heading'>
                     
                         <h3>{post.title}</h3>

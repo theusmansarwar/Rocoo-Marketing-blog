@@ -8,7 +8,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Footers from '../Footer/Footers';
 import Header from '../Header/Header';
-
+import Comment from '../Comments/Comment';
 import Login from '../Forms/Login';
 const ArticleView = ({ data: initialData, menuClick }) => {
   const navigate = useNavigate();
@@ -82,7 +82,9 @@ const ArticleView = ({ data: initialData, menuClick }) => {
           <div className="dummy-ad-large">
             <p>Ad Space</p>
             <p>336 x 280</p>
+          
           </div>
+          <Comment/>
         </div>
         <div className='right'>
           <div className="dummy-ad-vertical">
