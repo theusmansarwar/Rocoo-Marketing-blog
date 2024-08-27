@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import ArticleView from './components/ArticleView';
-import Home from './components/Home';
-import Category from './components/Category';
-import SideMenu from './components/SideMenu';
+import ArticleView from './components/Detail/ArticleView';
+import Home from './components/Index/Home';
+import Category from './components/Categories/Category';
+import SideMenu from './components/Header/SideMenu';
 
 function App() {
   const [isMenuClicked, setIsMenuClicked] = useState(false);

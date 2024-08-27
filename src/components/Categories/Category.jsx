@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Category.css'
 import { IoCloseOutline } from "react-icons/io5";
-import MostPopular from './MostPopular';
-import ContentTemplate from './ContentTemplate'
-import UpperPostTemplate from './UpperPost_template';
-import Header from './Header';
-import Footers from './Footers';
-import Login from './Login';
+import MostPopular from '../Popular/MostPopular';
+import ContentTemplate from '../Templates/ContentTemplate'
+import UpperPostTemplate from '../Templates/UpperPost_template';
+import Header from '../Header/Header';
+import Footers from '../Footer/Footers';
+import Login from '../Forms/Login';
 const Category = ({ category, onAction,menuClick}) => {
   
   const navigate = useNavigate();

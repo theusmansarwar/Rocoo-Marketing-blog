@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { TiSocialTwitter } from "react-icons/ti";
 import { IoCloseOutline } from "react-icons/io5";
-import { RiInstagramFill, RiVimeoFill, RiYoutubeFill, RiFacebookFill, RiSearchLine } from "react-icons/ri";
-import Featured_Posts from './Featured_Posts';
-import MostPopular from './MostPopular';
-import LowerpostTemplate from './LowerpostTemplate';
-import Login from './Login';
-import ArticleView from './ArticleView';
-import { GiHamburgerMenu } from "react-icons/gi";
-import ContentTemplate from './ContentTemplate';
-import Footers from './Footers';
-import Category from './Category';
-import Header from './Header';
-import UpperPostTemplate from './UpperPost_template';
-import SideMenu from './SideMenu';
+import Featured_Posts from '../Featured/Featured_Posts';
+import MostPopular from '../Popular/MostPopular';
+import LowerpostTemplate from '../Templates/LowerpostTemplate';
+import Login from '../Forms/Login';
+import ContentTemplate from '../Templates/ContentTemplate';
+import Footers from '../Footer/Footers';
+import Header from '../Header/Header';
+import UpperPostTemplate from '../Templates/UpperPost_template';
 const Home = ({menuClick}) => {
   const formatTitleForURL = (title) => {
     return title.toLowerCase().replace(/\s+/g, '-');
   };
-  const ListCategory = ['Tech', 'Entertainment', 'Business', 'Sports', 'Politics', 'Latest', 'Showbiz', 'Global', 'More']
 
   const navigate = useNavigate();
   const location = useLocation();

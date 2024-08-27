@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './ArticleView.css';
-import './DummyAd.css';
+import '../Ads/DummyAd.css';
 
 import { IoCloseOutline } from "react-icons/io5";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Footers from '../components/Footers';
-import Header from './Header';
+import Footers from '../Footer/Footers';
+import Header from '../Header/Header';
 
-import Login from './Login';
+import Login from '../Forms/Login';
 const ArticleView = ({ data: initialData, menuClick }) => {
   const navigate = useNavigate();
   const location = useLocation();
